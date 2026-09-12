@@ -47,7 +47,7 @@ That warning appears for any program that hasn't been signed with a paid certifi
 |---|---|
 | Double-click the timer | Start or pause |
 | Double-click again | Open the list |
-| Right-click | Modes, custom time, size, chime, quit |
+| Right-click | Modes, custom time, size, chime, updates, quit |
 | Drag | Move it. Let go near a corner and it snaps flush; let go anywhere else and it floats |
 | Wheel over the timer | Resize |
 | Wheel over the list | Scroll |
@@ -82,9 +82,19 @@ Paste that path into any Explorer window to find them. Both are plain JSON, safe
 
 If it ever fails to start, `focustimer_crash.log` in the same folder is the reason, written down.
 
+## Staying up to date
+
+Right-click and there's a **Check for Updates** entry. If a newer version exists it says so, and clicking it opens the download page.
+
+It also checks on its own once a day, and when it finds something the only thing that happens is that the menu entry changes to say so. It will not pop anything up, draw anything, or make a noise. If you never open the menu you will never be interrupted by it.
+
+**Check for Updates Automatically** in the same menu turns that off, and with it off the app makes no network connection at all unless you ask for a check by hand.
+
 ## Does it phone home?
 
-No. It makes no network connections of any kind, and it has nothing to report. Everything it knows about you is in those two files on your own machine.
+The update check is the only thing it ever sends, and it is one request to GitHub's public API asking what the newest release is called. It carries no identifier of any kind: no account, no machine name, no installation id, nothing about your tasks, your settings, or how you use the timer. GitHub sees an IP address making an anonymous request, the same as opening the download page in a browser would.
+
+That's the whole of it. There is no analytics, no telemetry, no crash reporting and no account. Everything the app knows about you stays in those two files on your own machine, and turning off automatic checks stops even that one request.
 
 ## Windows only
 
